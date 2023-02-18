@@ -93,7 +93,7 @@ endif
 build: install $(GENERATED_PROJECT)
 $(GENERATED_PROJECT): $(SOURCE_FILES)
 	cat cookiecutter.json
-	poetry run cookiecutter . --no-input --overwrite-if-exists
+	poetry run cookiecutter . --no-input --overwrite-if-exists  github_repo=$(GENERATED_PROJECT)
 ifndef CI
 endif
 	cd $(GENERATED_PROJECT) && poetry lock --no-update
